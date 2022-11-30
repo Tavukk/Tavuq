@@ -1,0 +1,60 @@
+function getPet()
+	print("ksksksks")
+end
+
+function dupe()
+	print("adsadsdas")
+end
+
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "Liseli Hub",
+	LoadingTitle = "iyi",
+	LoadingSubtitle = "by Tavuk",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil, -- Create a custom folder for your hub/game
+		FileName = "Morbirfil"
+	},
+        Discord = {
+        	Enabled = true,
+        	Invite = "hRNuqPaaTf", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Liseli Hub",
+		Subtitle = "Key System",
+		Note = "iyi",
+		FileName = "LiseliHubKey",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "tavuqq"
+	}
+})
+
+local Tab = Window:CreateTab("Trade") -- Title, Image
+local Section = Tab:CreateSection("Trade scam")
+
+local Toggle = Tab:CreateToggle({
+	Name = "Trade Scam",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		getPet()
+    		
+	end,
+})
+
+local Tab = Window:CreateTab("Dupe") -- Title, Image
+local Section = Tab:CreateSection("Dupe Pets")
+
+
+local Button = Tab:CreateButton({
+	Name = "Dupe",
+	Callback = function()
+		dupe()
+	end,
+})
